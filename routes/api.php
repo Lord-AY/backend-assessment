@@ -36,3 +36,7 @@ Route::middleware('auth:api')->post('/transfer', [\App\Http\Controllers\Api\Wall
 
 # Info Route
 Route::get('info', [\App\Http\Controllers\Api\BaseController::class, 'getInfo']);
+
+# State Route
+Route::post('state', [\App\Http\Controllers\Api\State\StateController::class, 'store']);
+Route::get('state', [\App\Http\Controllers\Api\State\StateController::class, 'index']);

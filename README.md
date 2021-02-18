@@ -14,3 +14,5 @@ php artisan config:clear<br />
 /api/wallets/{id} -> Get wallet details (GET)<br />
 /api/transfer -> Transfer (POST - protected by auth)<br />
 /api/info -> Get info (GET)<br />
+/api/states -> Store state in database from Excel sheet (POST - Excel file)<br />
+/api/states -> Get state and LGA (GET)

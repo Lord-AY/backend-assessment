@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Wallet;
 
+use App\Http\Resources\User\UsersResource;
 use App\Models\Transactions;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,6 +20,7 @@ class WalletResource extends JsonResource
       'id' => $this->id,
       'user_id' => $this->user_id,
       'type' => new WalletTypeResource($this->walletType),
+      'owner' => new UsersResource($this->user),
       'balance' => $this->balance,
       'transactions' => Transactions::where('sender_wallet_id', $this->id)->orWhere('receiver_wallet_id', $this->id)->get(),
       'date' => $this->created_at,
